@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:review_app_mobile/constants/index.dart';
+import 'package:review_app_mobile/navigators/tab_bar_navigator.dart';
 
-void main() {
-  runApp(MyApp());
-}
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
@@ -26,7 +25,10 @@ class MyApp extends StatelessWidget {
                 color: Colors.white,
                 fontWeight: FontWeight.normal,
               ))),
-      home: LoginScreen(),
+      home: Scaffold(
+        resizeToAvoidBottomInset: false,
+        body: LoginScreen(),
+      ),
     );
   }
 }
@@ -57,14 +59,45 @@ class LoginScreen extends StatelessWidget {
                           text: 'Review App\n',
                           style: Theme.of(context).textTheme.display1),
                       TextSpan(
-                          text: 'Master The Art Of Reviewing',
+                          text: 'Để chúng tôi thử giúp bạn!',
                           style: Theme.of(context).textTheme.headline),
                     ],
                   ),
                 ),
+                Container(
+                  margin: EdgeInsets.fromLTRB(32, 64, 32, 0),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(5),
+                    gradient: LinearGradient(
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                      colors: [
+                        const Color(0xFF20AFFF), // 0xAARRGGBB
+                        const Color(0xFF0063E0)
+                      ],
+                    ),
+                  ),
+                  height: 60,
+                  width: double.infinity,
+                  child: FlatButton(
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => TabBarNavigator()));
+                      },
+                      child: Center(
+                          child: Text(
+                        "Đăng nhập bằng FaceBook",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20),
+                      ))),
+                ),
               ],
             ),
-          )
+          ),
         ],
       ),
     );
