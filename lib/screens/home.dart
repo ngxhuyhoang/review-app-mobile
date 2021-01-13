@@ -11,19 +11,22 @@ class Home extends StatelessWidget {
         }
       },
       child: Scaffold(
+        backgroundColor: Colors.white,
         appBar: AppBar(
-          backgroundColor: Colors.transparent,
-          elevation: 0,
-          title: TextField(
-            decoration: InputDecoration(
-                labelText: "Tìm kiếm",
-                border: OutlineInputBorder(),
-                filled: true,
-                fillColor: Colors.transparent,
-                prefixIcon: Icon(Icons.search)),
-          ),
-          centerTitle: true,
-        ),
+            backgroundColor: Colors.transparent,
+            elevation: 0,
+            title: SizedBox(
+              height: 32,
+              child: TextField(
+                decoration: InputDecoration(
+                    labelText: "Tìm kiếm",
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(16)),
+                    filled: true,
+                    fillColor: Colors.transparent,
+                    prefixIcon: Icon(Icons.search)),
+              ),
+            )),
         body: Center(
           child: Text("Home screen"),
         ),
