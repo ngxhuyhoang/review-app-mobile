@@ -28,7 +28,7 @@ class _TabBarNavigator extends State<TabBarNavigator> {
       body: screens[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
-        selectedItemColor: AppTheme.brightGreek,
+        selectedItemColor: AppTheme.blue1,
         unselectedItemColor: Colors.grey,
         currentIndex: _currentIndex,
         showUnselectedLabels: false,
