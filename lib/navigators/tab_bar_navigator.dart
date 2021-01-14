@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:review_app_mobile/core/app_theme.dart';
 import 'package:review_app_mobile/screens/account.dart';
 import 'package:review_app_mobile/screens/home.dart';
 import 'package:review_app_mobile/screens/location.dart';
@@ -27,7 +28,7 @@ class _TabBarNavigator extends State<TabBarNavigator> {
       body: screens[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
-        selectedItemColor: Colors.red,
+        selectedItemColor: AppTheme.brightGreek,
         unselectedItemColor: Colors.grey,
         currentIndex: _currentIndex,
         showUnselectedLabels: false,
