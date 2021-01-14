@@ -1,37 +1,63 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:review_app_mobile/navigators/tab_bar_navigator.dart';
+import 'package:flutter_swiper/flutter_swiper.dart';
 
 class LoginScreen extends StatelessWidget {
+  final List<String> imageList = [
+    "https://picsum.photos/300/300?random=1",
+    "https://picsum.photos/300/300?random=2",
+    "https://picsum.photos/300/300?random=3",
+    "https://picsum.photos/300/300?random=4",
+    "https://picsum.photos/300/300?random=5",
+  ];
+
+  final List<Map<String, dynamic>> imageDescription = [
+    {'title': 'Ahih', 'subTitle': "ahihihihiiihih"},
+    {'title': 'Ahih1', 'subTitle': "ahihihihiiihih"},
+    {'title': 'Ahih2', 'subTitle': "ahihihihiiihih"},
+    {'title': 'Ahih3', 'subTitle': "ahihihihiiihih"},
+    {'title': 'Ahih4', 'subTitle': "ahihihihiiihih"},
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
         children: <Widget>[
           Expanded(
-              flex: 2,
-              child: Container(
-                decoration: BoxDecoration(
-                    image: DecorationImage(
-                        image: AssetImage("assets/image_background.jpg"),
-                        fit: BoxFit.cover,
-                        alignment: Alignment.topCenter)),
+              flex: 3,
+              child: Swiper(
+                itemCount: imageList.length,
+                itemBuilder: (BuildContext context, int index) {
+                  return Column(children: [
+                    CachedNetworkImage(
+                      // imageUrl: imageList[index],
+                      imageUrl: 'https://picsum.photos/300/300?random=5',
+                      placeholder: (context, url) =>
+                          CircularProgressIndicator(),
+                      // errorWidget: (context, url, error) => Icon(Icons.error),
+                    ),
+                    // Image.network(
+                    //   imageList[index],
+                    //   fit: BoxFit.fitWidth,
+                    // ),
+                    Row(children: [
+                      Column(
+                        children: [
+                          Text(imageDescription[index]['title']),
+                          Text(imageDescription[index]['subTitle']),
+                        ],
+                      )
+                    ]),
+                  ]);
+                },
+                pagination: SwiperPagination(),
               )),
           Expanded(
+            flex: 1,
             child: Column(
               children: [
-                RichText(
-                  textAlign: TextAlign.center,
-                  text: TextSpan(
-                    children: [
-                      TextSpan(
-                          text: 'Review App\n',
-                          style: Theme.of(context).textTheme.display1),
-                      TextSpan(
-                          text: 'Để chúng tôi thử giúp bạn!',
-                          style: Theme.of(context).textTheme.headline),
-                    ],
-                  ),
-                ),
                 Container(
                   margin: EdgeInsets.fromLTRB(32, 64, 32, 0),
                   decoration: BoxDecoration(

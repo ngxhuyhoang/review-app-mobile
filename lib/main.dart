@@ -13,17 +13,16 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
           primaryColor: primaryColor,
-          scaffoldBackgroundColor: backgroundColor,
           textTheme: TextTheme(
               display1: TextStyle(
-                color: Colors.white,
+                color: Colors.black,
                 fontWeight: FontWeight.bold,
               ),
               button: TextStyle(
                 color: primaryColor,
               ),
               headline: TextStyle(
-                color: Colors.white,
+                color: Colors.black45,
                 fontWeight: FontWeight.normal,
               ))),
       home: Scaffold(
