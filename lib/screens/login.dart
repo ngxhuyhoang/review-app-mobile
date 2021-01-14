@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:review_app_mobile/navigators/tab_bar_navigator.dart';
@@ -23,76 +25,82 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: <Widget>[
-          Expanded(
-              flex: 3,
-              child: Swiper(
-                itemCount: imageList.length,
-                itemBuilder: (BuildContext context, int index) {
-                  return Column(children: [
-                    CachedNetworkImage(
-                      // imageUrl: imageList[index],
-                      imageUrl: 'https://picsum.photos/300/300?random=5',
-                      placeholder: (context, url) =>
-                          CircularProgressIndicator(),
-                      // errorWidget: (context, url, error) => Icon(Icons.error),
-                    ),
-                    // Image.network(
-                    //   imageList[index],
-                    //   fit: BoxFit.fitWidth,
-                    // ),
-                    Row(children: [
-                      Column(
-                        children: [
-                          Text(imageDescription[index]['title']),
-                          Text(imageDescription[index]['subTitle']),
-                        ],
-                      )
-                    ]),
-                  ]);
-                },
-                pagination: SwiperPagination(),
-              )),
-          Expanded(
-            flex: 1,
-            child: Column(
-              children: [
-                Container(
-                  margin: EdgeInsets.fromLTRB(32, 64, 32, 0),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(5),
-                    gradient: LinearGradient(
-                      begin: Alignment.topLeft,
-                      end: Alignment.bottomRight,
-                      colors: [
-                        const Color(0xFF20AFFF),
-                        const Color(0xFF0063E0)
-                      ],
-                    ),
+      body: SafeArea(
+        child: Column(
+          children: <Widget>[
+            Expanded(
+                flex: 3,
+                child: Swiper(
+                  itemCount: imageList.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    return Column(children: [
+                      CachedNetworkImage(
+                        imageUrl: imageList[index],
+                        placeholder: (context, url) =>
+                            CircularProgressIndicator(),
+                        errorWidget: (context, url, error) => Icon(Icons.error),
+                      ),
+                      Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Column(
+                              children: [
+                                Text(
+                                  imageDescription[index]['title'],
+                                ),
+                                Text(imageDescription[index]['subTitle']),
+                              ],
+                            )
+                          ]),
+                    ]);
+                  },
+                  itemWidth: double.infinity,
+                  pagination: SwiperPagination(
+                    builder: DotSwiperPaginationBuilder(
+                      color: Colors.black, activeColor: Colors.red
+                    )
                   ),
-                  height: 60,
-                  width: double.infinity,
-                  child: FlatButton(
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => TabBarNavigator()));
-                      },
-                      child: Center(
-                          child: Text(
-                        "Đăng nhập bằng FaceBook",
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 20),
-                      ))),
-                ),
-              ],
+                )),
+            Expanded(
+              flex: 1,
+              child: Column(
+                children: [
+                  Container(
+                    margin: EdgeInsets.fromLTRB(32, 64, 32, 0),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(5),
+                      gradient: LinearGradient(
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                        colors: [
+                          const Color(0xFF20AFFF),
+                          const Color(0xFF0063E0)
+                        ],
+                      ),
+                    ),
+                    height: 60,
+                    width: double.infinity,
+                    child: FlatButton(
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => TabBarNavigator()));
+                        },
+                        child: Center(
+                            child: Text(
+                          "Đăng nhập bằng FaceBook",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20),
+                        ))),
+                  ),
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
