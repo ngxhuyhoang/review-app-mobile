@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:review_app_mobile/constants/index.dart';
 
-import 'screens/login.dart';
+import 'screens/login/main.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -13,7 +13,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
       theme: ThemeData(
           primaryColor: primaryColor,
           textTheme: TextTheme(
