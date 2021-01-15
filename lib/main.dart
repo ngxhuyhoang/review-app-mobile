@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+          fontFamily: "Montserrat",
           primaryColor: primaryColor,
           textTheme: TextTheme(
               display1: TextStyle(

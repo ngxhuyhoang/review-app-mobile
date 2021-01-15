@@ -46,28 +46,31 @@ class LoginScreen extends StatelessWidget {
                     ),
                   ]),
               height: 60,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  Container(
-                      width: 32,
-                      height: 32,
-                      padding: EdgeInsets.only(left: 6, top: 8),
-                      margin: EdgeInsets.only(left: 16),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(18),
-                        color: AppTheme.white,
-                      ),
-                      child: AppIcon.facebook),
-                  Text(
-                    "Đăng nhập bằng FaceBook",
-                    style: GoogleFonts.montserrat(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16),
-                  ),
-                  Container(width: 32)
-                ],
+              child: FlatButton(
+                onPressed: () {},
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Container(
+                        width: 32,
+                        height: 32,
+                        padding: EdgeInsets.only(left: 6, top: 8),
+                        margin: EdgeInsets.only(left: 16),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(18),
+                          color: AppTheme.white,
+                        ),
+                        child: AppIcon.facebook),
+                    Text(
+                      "Đăng nhập bằng FaceBook",
+                      style: GoogleFonts.montserrat(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16),
+                    ),
+                    Container(width: 32)
+                  ],
+                ),
               ),
             ),
           ],
