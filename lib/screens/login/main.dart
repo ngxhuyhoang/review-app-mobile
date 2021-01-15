@@ -2,8 +2,8 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:review_app_mobile/core/app_icon.dart';
 import 'package:review_app_mobile/core/app_theme.dart';
-import 'package:review_app_mobile/navigators/tab_bar_navigator.dart';
 
 import 'login_swiper.dart';
 
@@ -21,15 +21,11 @@ class LoginScreen extends StatelessWidget {
                   children: [
                     Text(
                       "Xin chào...!",
-                      style: GoogleFonts.montserrat(
-                        fontSize: 32
-                      ),
+                      style: GoogleFonts.montserrat(fontSize: 32),
                     ),
                     Text(
                       "Những địa điểm thú vị đang đợi bạn",
-                      style: GoogleFonts.montserrat(
-                          fontSize: 16
-                      ),
+                      style: GoogleFonts.montserrat(fontSize: 16),
                     ),
                   ],
                 )),
@@ -56,15 +52,13 @@ class LoginScreen extends StatelessWidget {
                   Container(
                       width: 32,
                       height: 32,
-                      padding: EdgeInsets.only(top: 4),
+                      padding: EdgeInsets.only(left: 6, top: 8),
                       margin: EdgeInsets.only(left: 16),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(18),
                         color: AppTheme.white,
                       ),
-                      child: Image.asset(
-                        'assets/icons/ic_facebook_blue.png',
-                      )),
+                      child: AppIcon.facebook),
                   Text(
                     "Đăng nhập bằng FaceBook",
                     style: GoogleFonts.montserrat(
