@@ -57,20 +57,25 @@ class Login extends StatelessWidget {
                         width: 32,
                         height: 32,
                         padding: EdgeInsets.only(left: 6, top: 8),
-                        margin: EdgeInsets.only(left: 16),
+                        margin: EdgeInsets.only(left: 0),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(18),
                           color: AppTheme.white,
                         ),
                         child: AppIcon.facebook),
+                    Spacer(),
                     Text(
                       "Đăng nhập bằng FaceBook",
                       style: GoogleFonts.montserrat(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
-                          fontSize: 16),
+                          fontSize: 14),
                     ),
-                    Container(width: 32)
+                    Spacer(),
+                    Container(
+                      width: 32,
+                      height: 32,
+                    ),
                   ],
                 ),
               ),
