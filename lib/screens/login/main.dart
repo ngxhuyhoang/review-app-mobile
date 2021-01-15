@@ -21,14 +21,14 @@ class LoginScreen extends StatelessWidget {
                   children: [
                     Text(
                       "Xin chào...!",
-                      style: GoogleFonts.patrickHand(
-                        fontSize: 40
+                      style: GoogleFonts.montserrat(
+                        fontSize: 32
                       ),
                     ),
                     Text(
                       "Những địa điểm thú vị đang đợi bạn",
-                      style: GoogleFonts.patrickHand(
-                          fontSize: 20
+                      style: GoogleFonts.montserrat(
+                          fontSize: 16
                       ),
                     ),
                   ],
@@ -67,10 +67,10 @@ class LoginScreen extends StatelessWidget {
                       )),
                   Text(
                     "Đăng nhập bằng FaceBook",
-                    style: GoogleFonts.patrickHand(
+                    style: GoogleFonts.montserrat(
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
-                        fontSize: 20),
+                        fontSize: 16),
                   ),
                   Container(width: 32)
                 ],
