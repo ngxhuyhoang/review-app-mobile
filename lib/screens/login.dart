@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'package:review_app_mobile/navigators/tab_bar_navigator.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 
@@ -29,37 +30,40 @@ class LoginScreen extends StatelessWidget {
         child: Column(
           children: <Widget>[
             Expanded(
-                flex: 3,
+                flex: 4,
                 child: Swiper(
                   itemCount: imageList.length,
                   itemBuilder: (BuildContext context, int index) {
-                    return Column(children: [
-                      CachedNetworkImage(
-                        imageUrl: imageList[index],
-                        placeholder: (context, url) =>
-                            CircularProgressIndicator(),
-                        errorWidget: (context, url, error) => Icon(Icons.error),
-                      ),
-                      Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Column(
+                    return Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Center(
+                            child: CachedNetworkImage(
+                              imageUrl: imageList[index],
+                              placeholder: (context, url) => Lottie.asset(
+                                  'assets/animations/loading.json'),
+                              errorWidget: (context, url, error) =>
+                                  Icon(Icons.error),
+                            ),
+                          ),
+                          Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                Text(
-                                  imageDescription[index]['title'],
-                                ),
-                                Text(imageDescription[index]['subTitle']),
-                              ],
-                            )
-                          ]),
-                    ]);
+                                Column(
+                                  children: [
+                                    Text(
+                                      imageDescription[index]['title'],
+                                    ),
+                                    Text(imageDescription[index]['subTitle']),
+                                  ],
+                                )
+                              ]),
+                        ]);
                   },
                   itemWidth: double.infinity,
                   pagination: SwiperPagination(
-                    builder: DotSwiperPaginationBuilder(
-                      color: Colors.black, activeColor: Colors.red
-                    )
-                  ),
+                      builder: DotSwiperPaginationBuilder(
+                          color: Colors.black, activeColor: Colors.red)),
                 )),
             Expanded(
               flex: 1,
