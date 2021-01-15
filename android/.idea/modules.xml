@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/android.iml" filepath="$PROJECT_DIR$/.idea/modules/android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/android.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/android.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/473627236/android.geolocator.iml" filepath="$PROJECT_DIR$/.idea/modules/473627236/android.geolocator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1145532553/android.path_provider.iml" filepath="$PROJECT_DIR$/.idea/modules/-1145532553/android.path_provider.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/21040847/android.sqflite.iml" filepath="$PROJECT_DIR$/.idea/modules/21040847/android.sqflite.iml" />
+    </modules>
+  </component>
+</project>

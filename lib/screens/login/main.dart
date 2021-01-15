@@ -7,7 +7,7 @@ import 'package:review_app_mobile/core/app_theme.dart';
 
 import 'login_swiper.dart';
 
-class LoginScreen extends StatelessWidget {
+class Login extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,7 +47,9 @@ class LoginScreen extends StatelessWidget {
                   ]),
               height: 60,
               child: FlatButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushReplacementNamed(context, '/home');
+                },
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[

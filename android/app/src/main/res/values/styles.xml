@@ -15,4 +15,13 @@
     <style name="NormalTheme" parent="@android:style/Theme.Black.NoTitleBar">
         <item name="android:windowBackground">@android:color/white</item>
     </style>
+
+    <color name="launch_color">#1e90ff</color>
+
+    <style name="Icon24x24">
+        <item name="android:src">@drawable/ic_launcher</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_width">24dp</item>
+        <item name="android:layout_height">24dp</item>
+    </style>
 </resources>

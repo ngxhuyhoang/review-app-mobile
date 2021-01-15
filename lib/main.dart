@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:review_app_mobile/constants/index.dart';
 
+import 'screens/home.dart';
 import 'screens/login/main.dart';
 
 void main() {
@@ -13,6 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      initialRoute: "/",
       theme: ThemeData(
           fontFamily: "Montserrat",
           primaryColor: primaryColor,
@@ -28,10 +30,11 @@ class MyApp extends StatelessWidget {
                 color: Colors.black45,
                 fontWeight: FontWeight.normal,
               ))),
-      home: Scaffold(
-        resizeToAvoidBottomInset: false,
-        body: LoginScreen(),
-      ),
+      routes: {
+        '/': (context) => Login(),
+        '/home': (context) => Home(),
+        '/login': (context) => Login(),
+      },
     );
   }
 }
