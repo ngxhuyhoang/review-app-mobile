@@ -50,8 +50,11 @@ class Login extends StatelessWidget {
               height: 60,
               child: FlatButton(
                 onPressed: () {
-                  Navigator.pushNamed(context, RouteGenerator.homeRoute, arguments: "Test");
+                  Navigator.pushNamed(context, RouteGenerator.homeRoute,
+                      arguments: "Test");
                 },
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30)),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
