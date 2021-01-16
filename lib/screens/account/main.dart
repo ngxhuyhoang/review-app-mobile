@@ -8,12 +8,31 @@ class Account extends StatelessWidget {
       body: SafeArea(
           child: Column(
         children: [
-          Center(
-            child: ClipRRect(
-                borderRadius: BorderRadius.circular(75),
-                child: Image.network("https://picsum.photos/150/150",
-                    width: 150, height: 150)),
-          ),
+          Image.network("https://i.pravatar.cc/300",
+              fit: BoxFit.cover, width: double.infinity, height: 300),
+          Container(
+            padding: EdgeInsets.all(16),
+            margin: EdgeInsets.only(left: 32, right: 32),
+            width: double.infinity,
+            child: Column(
+              children: [
+                Text("Hello"),
+                Text("Level 5"),
+                Text("Thích ăn chơi nhảy múa"),
+              ],
+            ),
+            decoration: BoxDecoration(
+                color: AppTheme.white,
+                borderRadius: BorderRadius.circular(15),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.5),
+                    spreadRadius: 1,
+                    blurRadius: 10,
+                    offset: Offset(0, 5), // changes position of shadow
+                  ),
+                ]),
+          )
         ],
       )),
     );
