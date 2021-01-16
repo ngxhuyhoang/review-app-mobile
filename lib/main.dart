@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:review_app_mobile/constants/index.dart';
 
+import 'navigators/route_generator.dart';
 import 'screens/home.dart';
 import 'screens/login/main.dart';
 
@@ -30,11 +31,7 @@ class MyApp extends StatelessWidget {
                 color: Colors.black45,
                 fontWeight: FontWeight.normal,
               ))),
-      routes: {
-        '/': (context) => Login(),
-        '/home': (context) => Home(),
-        '/login': (context) => Login(),
-      },
+      onGenerateRoute: RouteGenerator.generateRoute
     );
   }
 }

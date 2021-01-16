@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
 
 class Home extends StatelessWidget {
+  final String arguments;
+
+  Home({ Key key, this.arguments }) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
+
+    print(this.arguments);
+
     return GestureDetector(
       onTap: () {
         FocusScopeNode currentFocus = FocusScope.of(context);

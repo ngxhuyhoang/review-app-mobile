@@ -4,7 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:review_app_mobile/core/app_icon.dart';
 import 'package:review_app_mobile/core/app_theme.dart';
+import 'package:review_app_mobile/navigators/route_generator.dart';
 
+import '../home.dart';
 import 'login_swiper.dart';
 
 class Login extends StatelessWidget {
@@ -48,7 +50,7 @@ class Login extends StatelessWidget {
               height: 60,
               child: FlatButton(
                 onPressed: () {
-                  Navigator.pushReplacementNamed(context, '/home');
+                  Navigator.pushNamed(context, RouteGenerator.homeRoute, arguments: "Test");
                 },
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
