@@ -1,7 +1,5 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
-import 'package:lottie/lottie.dart';
 import 'package:review_app_mobile/core/app_theme.dart';
 
 class LoginSwiper extends StatelessWidget {
