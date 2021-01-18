@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:review_app_mobile/core/app_theme.dart';
-import 'package:review_app_mobile/screens/account.dart';
+import 'package:review_app_mobile/screens/account/main.dart';
 import 'package:review_app_mobile/screens/home.dart';
 import 'package:review_app_mobile/screens/location.dart';
 import 'package:review_app_mobile/screens/new_post.dart';

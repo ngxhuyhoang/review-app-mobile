@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: "/",
+      initialRoute: RouteGenerator.initialRoute,
       theme: ThemeData(
           fontFamily: "Montserrat",
           primaryColor: primaryColor,
